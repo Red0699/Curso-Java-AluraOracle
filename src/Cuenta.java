@@ -1,27 +1,33 @@
 
 //entidad Cuenta:
-class Cuenta {
+public abstract class Cuenta {
 
     //Atributos
-    private double saldo;
+    protected double saldo;
     private int agencia;
     private int numero;
 
+    private static int total;
     private Cliente titular = new Cliente();
 
     //Constructor
     public Cuenta(int agencia, int numero){
         this.agencia = agencia;
         this.numero = numero;
-
+        Cuenta.total++;
     }
 
     //Metodos
 
     //No retorna valor
+    /*
     public void depositar(double valor){
         this.saldo += valor;
     }
+    */
+
+    public abstract void depositar(double valor);
+
     //Retorna valor
     public boolean retirar(double valor){
         if (this.saldo >= valor){

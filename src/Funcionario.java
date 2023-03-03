@@ -43,8 +43,11 @@ public abstract class Funcionario {
     }
 
     //Metodos
+
+    public abstract double getBonificacion();
+    /*
     public double getBonificacion(){
-        /*
+
         //1 = Gerente
         //0 = Funcionario
         if(this.tipo == 0){
@@ -54,9 +57,11 @@ public abstract class Funcionario {
         }else{
             return 0;
         }
-        */
+
 
         return this.salario * 0.1;
 
     }
+    */
+
 }
