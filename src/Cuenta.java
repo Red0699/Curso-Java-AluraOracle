@@ -6,24 +6,17 @@ class Cuenta {
     private double saldo;
     private int agencia;
     private int numero;
+
     private Cliente titular = new Cliente();
 
     //Constructor
-    public Cuenta(int agencia){
-        int total = 0;
-        if(agencia <= 0){
-            System.out.println("No se permite 0");
-            this.agencia = 1;
-        } else{
-            this.agencia = agencia;
-        }
-        total++;
-        System.out.println("Se van creando: " + total + " cuentas");
+    public Cuenta(int agencia, int numero){
+        this.agencia = agencia;
+        this.numero = numero;
+
     }
 
     //Metodos
-
-
 
     //No retorna valor
     public void depositar(double valor){
@@ -41,7 +34,7 @@ class Cuenta {
 
     public boolean transferir(double valor, Cuenta cuenta){
         if (this.saldo >= valor){
-            this.saldo -= valor;
+            this.retirar(valor);
             cuenta.depositar(valor);
             return true;
         }else{
